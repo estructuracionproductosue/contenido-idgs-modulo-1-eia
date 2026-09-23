@@ -2,66 +2,1201 @@
 <html lang="es">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Unidad 1 · El Ser y el autoconocimiento</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unidad 1 · Dimensión Ser</title>
   <style>
-    :root{--cream:#fffaf4;--sand:#dcc29d;--pink:#eb9ab0;--coral:#ee5949;--orange:#ff7e29;--wine:#7b283f;--ink:#33282a;--muted:#79676a;--line:#e4d6c8;--white:#fff;--shadow:0 18px 45px rgba(73,35,45,.13)}
-    *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;background:#f7eee8;color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.65}
-    button,a{font:inherit} button{cursor:pointer} button:focus-visible,a:focus-visible{outline:3px solid rgba(255,126,41,.42);outline-offset:3px}
-    .app{width:min(1060px,calc(100% - 24px));margin:18px auto;background:var(--cream);border:1px solid #d9c2b5;border-radius:22px;box-shadow:var(--shadow);overflow:hidden}
-    .palette{display:flex;height:8px}.palette i{flex:1}.palette i:nth-child(1){background:var(--sand)}.palette i:nth-child(2){background:var(--pink)}.palette i:nth-child(3){background:var(--coral)}.palette i:nth-child(4){background:var(--orange)}.palette i:nth-child(5){background:var(--wine)}
-    .hero{padding:34px 34px 28px;text-align:center;background:radial-gradient(circle at 92% 12%,rgba(235,154,176,.17),transparent 25%),var(--cream)}
-    .eyebrow{display:inline-block;padding:6px 13px;border:1px solid var(--orange);border-radius:999px;color:#bd4c30;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase}
-    h1{margin:12px auto 8px;max-width:790px;color:var(--wine);font-size:clamp(27px,5vw,43px);line-height:1.12} .lead{max-width:760px;margin:0 auto;color:var(--muted)}
-    .progress-wrap{padding:0 28px 18px}.progress-meta{display:flex;justify-content:space-between;gap:12px;margin-bottom:7px;color:var(--muted);font-size:12px;font-weight:700}.track{height:7px;background:#f0e2d8;border-radius:999px;overflow:hidden}.bar{width:14.285%;height:100%;background:linear-gradient(90deg,var(--pink),var(--coral),var(--orange));border-radius:999px;transition:width .35s ease}
-    .layout{display:grid;grid-template-columns:235px minmax(0,1fr);border-top:1px solid var(--line)}
-    .side{padding:22px 16px;background:#fbf3ed;border-right:1px solid var(--line)}.side-title{margin:0 10px 12px;color:var(--wine);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:1px}
-    .nav{display:grid;gap:7px}.nav button{width:100%;padding:11px 12px;border:1px solid transparent;border-radius:11px;background:transparent;color:#5d4a4e;text-align:left;font-size:14px;font-weight:700}.nav button:hover{background:#fff}.nav button.active{color:var(--wine);background:#fff;border-color:#dfcabe;box-shadow:0 5px 14px rgba(73,35,45,.07)}
-    .stage{min-width:0;padding:30px}.panel{display:none;animation:enter .35s ease}.panel.active{display:block}@keyframes enter{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-    .section-tag{color:#bd4c30;font-size:11px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase}.panel h2{margin:4px 0 14px;color:var(--wine);font-size:clamp(24px,4vw,32px);line-height:1.22}.panel h3{margin:22px 0 9px;color:var(--wine);font-size:19px}.panel p{margin:0 0 14px}
-    .callout{margin:20px 0;padding:18px 20px;border:1px solid var(--line);border-left:5px solid var(--orange);border-radius:12px;background:var(--cream)}.callout strong{color:var(--wine)}
-    .question{margin:18px 0;padding:20px;border-radius:14px;background:#f8e8e6;color:var(--wine);font-size:19px;font-weight:800;text-align:center}
-    .media-slot{margin:18px 0;padding:24px;border:1px dashed #c99ca7;border-radius:16px;background:#fff;text-align:center}.media-icon{display:grid;place-items:center;width:50px;height:50px;margin:0 auto 10px;border-radius:50%;background:#f6e2e7;color:var(--wine);font-size:22px}.media-slot strong{display:block;color:var(--wine)}.media-slot small{display:block;margin-top:4px;color:var(--muted)}
-    .compass{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:18px 0}.reveal{padding:15px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--wine);font-weight:800}.reveal:hover,.reveal.active{border-color:var(--orange);background:#fff5ed}.reveal-box{min-height:90px;padding:18px;border-left:5px solid var(--wine);border-radius:10px;background:#f6ece7}
-    .sort-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:16px}.dropzone{min-height:170px;padding:14px;border:2px dashed #d6b8b8;border-radius:14px;background:#fff}.dropzone h4{margin:0 0 10px;color:var(--wine)}.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.chip{padding:9px 11px;border:1px solid #d9c2b5;border-radius:10px;background:#fff;color:var(--ink);font-size:13px;font-weight:700;cursor:grab}.chip.selected{border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,126,41,.14)}.placed{display:block;margin:7px 0;padding:8px;border-radius:8px;background:#fff5ef;font-size:13px}.feedback{min-height:26px;margin-top:10px;color:var(--wine);font-weight:800}
-    .benefits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;margin:17px 0}.benefit{padding:16px;border:1px solid var(--line);border-radius:12px;background:#fff}.benefit b{display:block;color:var(--wine)}
-    .checkin{display:grid;gap:10px;margin:16px 0}.checkin div{display:flex;gap:11px;padding:14px;border:1px solid var(--line);border-radius:11px;background:#fff}.checkin span{display:grid;place-items:center;flex:0 0 26px;height:26px;border:1px solid var(--wine);border-radius:50%;color:var(--wine);font-weight:800}
-    .steps{display:grid;gap:10px;margin:16px 0}.step{display:flex;gap:12px;padding:14px;border:1px solid var(--line);border-radius:12px;background:#fff}.step-num{display:grid;place-items:center;flex:0 0 31px;height:31px;border-radius:50%;background:var(--wine);color:#fff;font-weight:800}.step b{color:var(--wine)}
-    .carousel{position:relative;margin:20px 0;padding:26px 54px;border:1px solid var(--line);border-radius:17px;background:linear-gradient(135deg,#fff,#fff5ef);text-align:center}.slide{display:none;min-height:150px;align-content:center}.slide.active{display:grid;animation:enter .3s ease}.slide .number{color:var(--orange);font-size:12px;font-weight:900;letter-spacing:1px}.slide blockquote{margin:8px auto;max-width:640px;color:var(--wine);font-size:clamp(19px,3vw,26px);font-weight:800;line-height:1.35}.car-btn{position:absolute;top:50%;transform:translateY(-50%);display:grid;place-items:center;width:36px;height:36px;border:1px solid #d9c2b5;border-radius:50%;background:#fff;color:var(--wine);font-size:20px}.car-prev{left:12px}.car-next{right:12px}.dots{display:flex;justify-content:center;gap:7px;margin-top:12px}.dot{width:8px;height:8px;padding:0;border:0;border-radius:50%;background:#d8c4bc}.dot.active{width:24px;border-radius:99px;background:var(--orange)}
-    .controls{display:flex;justify-content:space-between;gap:10px;margin-top:27px;padding-top:20px;border-top:1px solid var(--line)}.btn{padding:11px 17px;border:1px solid var(--wine);border-radius:999px;background:#fff;color:var(--wine);font-weight:800}.btn.primary{background:var(--wine);color:#fff}.btn:disabled{opacity:.35;cursor:not-allowed}
-    .complete{margin-top:18px;padding:18px;border-radius:14px;background:#f7e5df;text-align:center}.complete a{display:inline-block;margin-top:8px;color:var(--wine);font-weight:800}
-    @media(max-width:760px){.app{width:100%;margin:0;border-radius:0}.hero{padding:26px 20px 22px}.layout{display:block}.side{position:sticky;top:0;z-index:10;padding:10px;border-right:0;border-bottom:1px solid var(--line);overflow-x:auto}.side-title{display:none}.nav{display:flex;width:max-content}.nav button{width:auto;white-space:nowrap}.stage{padding:24px 18px}.sort-grid,.benefits{grid-template-columns:1fr}.carousel{padding:23px 45px}.controls{position:sticky;bottom:0;margin-left:-18px;margin-right:-18px;padding:12px 18px;background:rgba(255,250,244,.96);backdrop-filter:blur(8px)}}
-    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+    :root {
+      --cream: #fffaf4;
+      --paper: #fffefd;
+      --sand: #dcc29d;
+      --pink: #eb9ab0;
+      --coral: #ee5949;
+      --orange: #ff7e29;
+      --wine: #7b283f;
+      --ink: #33282a;
+      --muted: #756368;
+      --line: #e7d9cc;
+      --soft: #f7ece6;
+      --shadow: 0 18px 48px rgba(73, 35, 45, .14);
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      padding: 8px;
+      background: #f4ebe5;
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    }
+
+    button { font: inherit; }
+
+    button:focus-visible {
+      outline: 3px solid rgba(255, 126, 41, .42);
+      outline-offset: 2px;
+    }
+
+    .course {
+      display: grid;
+      grid-template-rows: 7px auto minmax(0, 1fr) auto;
+      width: min(1180px, 100%);
+      height: min(760px, calc(100svh - 16px));
+      overflow: hidden;
+      background: var(--cream);
+      border: 1px solid #d9c6b8;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .palette {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .palette span:nth-child(1) { background: var(--sand); }
+    .palette span:nth-child(2) { background: var(--pink); }
+    .palette span:nth-child(3) { background: var(--coral); }
+    .palette span:nth-child(4) { background: var(--orange); }
+    .palette span:nth-child(5) { background: var(--wine); }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 76px;
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 250, 244, .96);
+    }
+
+    .brand-kicker {
+      display: block;
+      margin-bottom: 2px;
+      color: #b74931;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+    }
+
+    .brand-title {
+      margin: 0;
+      color: var(--wine);
+      font-size: clamp(19px, 2.4vw, 27px);
+      line-height: 1.1;
+    }
+
+    .progress-summary {
+      display: grid;
+      grid-template-columns: auto minmax(110px, 190px);
+      align-items: center;
+      gap: 12px;
+      min-width: min(310px, 42vw);
+    }
+
+    .progress-copy {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .track {
+      height: 7px;
+      overflow: hidden;
+      background: #ecddd3;
+      border-radius: 99px;
+    }
+
+    .bar {
+      width: 14.285%;
+      height: 100%;
+      background: linear-gradient(90deg, var(--pink), var(--coral), var(--orange), var(--wine));
+      border-radius: inherit;
+      transition: width .35s ease;
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      min-height: 0;
+    }
+
+    .index {
+      min-height: 0;
+      padding: 18px 13px;
+      background: #fbf2ec;
+      border-right: 1px solid var(--line);
+    }
+
+    .index-label {
+      margin: 0 8px 11px;
+      color: var(--wine);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    .index-list {
+      display: grid;
+      gap: 6px;
+    }
+
+    .index-button {
+      display: grid;
+      grid-template-columns: 27px minmax(0, 1fr);
+      align-items: center;
+      gap: 9px;
+      width: 100%;
+      min-height: 45px;
+      padding: 7px 9px;
+      border: 1px solid transparent;
+      border-radius: 11px;
+      background: transparent;
+      color: #665258;
+      text-align: left;
+      cursor: pointer;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+
+    .index-button:hover {
+      background: rgba(255, 255, 255, .75);
+      transform: translateX(2px);
+    }
+
+    .index-button.active {
+      background: #fff;
+      border-color: #ddc8bc;
+      color: var(--wine);
+      box-shadow: 0 5px 13px rgba(73, 35, 45, .07);
+    }
+
+    .index-number {
+      display: grid;
+      place-items: center;
+      width: 27px;
+      aspect-ratio: 1;
+      border: 1px solid #d7c1b5;
+      border-radius: 50%;
+      font-size: 10px;
+      font-weight: 900;
+    }
+
+    .index-button.active .index-number {
+      background: var(--wine);
+      border-color: var(--wine);
+      color: #fff;
+    }
+
+    .index-text strong,
+    .index-text small { display: block; }
+
+    .index-text strong {
+      font-size: 12px;
+      line-height: 1.15;
+    }
+
+    .index-text small {
+      margin-top: 2px;
+      color: #8d777b;
+      font-size: 9px;
+      line-height: 1.15;
+    }
+
+    .stage {
+      position: relative;
+      min-width: 0;
+      min-height: 0;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 96% 4%, rgba(235, 154, 176, .13), transparent 23%),
+        radial-gradient(circle at 5% 96%, rgba(220, 194, 157, .18), transparent 24%),
+        var(--cream);
+    }
+
+    .page {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      min-width: 0;
+      min-height: 0;
+      padding: clamp(18px, 3vh, 30px) clamp(20px, 3vw, 36px);
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateX(18px);
+      transition: opacity .3s ease, transform .3s ease, visibility 0s linear .3s;
+    }
+
+    .page.active {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+      transform: none;
+      transition-delay: 0s;
+    }
+
+    .page-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
+      gap: clamp(18px, 3vw, 36px);
+      min-height: 0;
+    }
+
+    .page-copy {
+      display: flex;
+      min-width: 0;
+      min-height: 0;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .moment {
+      margin-bottom: 6px;
+      color: #b74931;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.15px;
+      text-transform: uppercase;
+    }
+
+    .page h2 {
+      margin: 0 0 10px;
+      color: var(--wine);
+      font-size: clamp(28px, 4vw, 45px);
+      line-height: 1.05;
+      letter-spacing: -.8px;
+    }
+
+    .skill-subtitle {
+      margin: -2px 0 12px;
+      color: #b24931;
+      font-size: clamp(13px, 1.45vw, 17px);
+      font-weight: 800;
+    }
+
+    .definition {
+      margin: 0 0 14px;
+      color: #59494d;
+      font-size: clamp(13px, 1.35vw, 16px);
+      line-height: 1.55;
+    }
+
+    .definition strong { color: var(--wine); }
+
+    .insight-box {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, .64);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--accent, var(--orange));
+      border-radius: 12px;
+    }
+
+    .insight-icon {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      aspect-ratio: 1;
+      background: var(--soft);
+      border-radius: 50%;
+      color: var(--wine);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .insight-box strong {
+      display: block;
+      margin-bottom: 2px;
+      color: var(--wine);
+      font-size: 12px;
+    }
+
+    .insight-box p {
+      margin: 0;
+      color: #6b595e;
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    .visual-column {
+      display: grid;
+      grid-template-rows: minmax(155px, .88fr) minmax(215px, 1.12fr);
+      gap: 12px;
+      min-height: 0;
+    }
+
+    .illustration {
+      display: grid;
+      place-items: center;
+      min-height: 0;
+      overflow: hidden;
+      background: linear-gradient(145deg, #fff, #f8eae3);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(73, 35, 45, .07);
+    }
+
+    .illustration svg {
+      width: min(94%, 330px);
+      max-height: 100%;
+    }
+
+    .challenge {
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      min-height: 0;
+      padding: 14px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 7px 18px rgba(73, 35, 45, .06);
+    }
+
+    .challenge-tag {
+      color: #b74931;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .challenge-question {
+      margin: 4px 0 8px;
+      color: var(--wine);
+      font-size: clamp(11px, 1.05vw, 13px);
+      font-weight: 800;
+      line-height: 1.28;
+    }
+
+    .options {
+      display: grid;
+      gap: 5px;
+      align-content: start;
+    }
+
+    .option {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid #e1d2c8;
+      border-radius: 8px;
+      background: #fffaf6;
+      color: #58474c;
+      text-align: left;
+      font-size: 10px;
+      line-height: 1.22;
+      cursor: pointer;
+      transition: border-color .2s ease, background .2s ease, transform .2s ease;
+    }
+
+    .option:hover {
+      border-color: var(--orange);
+      transform: translateX(2px);
+    }
+
+    .option.selected-good {
+      border-color: #8a9a69;
+      background: #f1f4e9;
+      color: #465332;
+    }
+
+    .option.selected-think {
+      border-color: var(--coral);
+      background: #fff0ec;
+      color: #7d3a31;
+    }
+
+    .feedback {
+      min-height: 34px;
+      margin-top: 7px;
+      padding: 7px 9px;
+      background: #f8eee8;
+      border-radius: 8px;
+      color: #725b61;
+      font-size: 9.5px;
+      line-height: 1.25;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(310px, .92fr);
+      gap: clamp(20px, 4vw, 48px);
+      align-items: center;
+      min-height: 0;
+    }
+
+    .intro-grid h2 { font-size: clamp(32px, 5vw, 54px); }
+
+    .intro-lead {
+      max-width: 650px;
+      margin: 0 0 15px;
+      color: #59494d;
+      font-size: clamp(14px, 1.5vw, 17px);
+      line-height: 1.55;
+    }
+
+    .intro-lead strong { color: var(--wine); }
+
+    .route-preview {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 6px;
+      margin-top: 15px;
+    }
+
+    .route-chip {
+      padding: 9px 6px;
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--chip);
+      border-radius: 9px;
+      background: rgba(255, 255, 255, .65);
+      color: var(--wine);
+      text-align: center;
+      font-size: 9px;
+      font-weight: 800;
+      line-height: 1.18;
+    }
+
+    .intro-visual {
+      display: grid;
+      place-items: center;
+      height: min(430px, 54vh);
+      background: linear-gradient(145deg, #fff, #f7e9e3);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: 0 12px 28px rgba(73, 35, 45, .09);
+    }
+
+    .intro-visual svg {
+      width: min(92%, 390px);
+      max-height: 94%;
+    }
+
+    .closing-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, .72fr);
+      gap: 34px;
+      align-items: center;
+      min-height: 0;
+    }
+
+    .summary-list {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 7px;
+      margin-top: 18px;
+    }
+
+    .summary-item {
+      padding: 12px 7px;
+      border: 1px solid var(--line);
+      border-bottom: 5px solid var(--summary);
+      border-radius: 11px;
+      background: rgba(255, 255, 255, .65);
+      color: var(--wine);
+      text-align: center;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .closing-card {
+      padding: clamp(22px, 4vw, 38px);
+      background: var(--wine);
+      border-radius: 22px;
+      color: #fff;
+      text-align: center;
+      box-shadow: 0 16px 34px rgba(123, 40, 63, .22);
+    }
+
+    .closing-card .arrow {
+      display: grid;
+      place-items: center;
+      width: 62px;
+      aspect-ratio: 1;
+      margin: 0 auto 16px;
+      background: #fff;
+      border-radius: 50%;
+      color: var(--wine);
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+    .closing-card strong {
+      display: block;
+      font-size: clamp(19px, 2.2vw, 26px);
+      line-height: 1.2;
+    }
+
+    .closing-card p {
+      margin: 9px 0 0;
+      color: #f3dfe4;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 14px;
+      min-height: 68px;
+      padding: 10px 18px;
+      background: #fffaf4;
+      border-top: 1px solid var(--line);
+    }
+
+    .nav-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-width: 126px;
+      min-height: 42px;
+      padding: 9px 16px;
+      border: 1px solid var(--wine);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--wine);
+      font-size: 12px;
+      font-weight: 850;
+      cursor: pointer;
+    }
+
+    .nav-button.primary {
+      background: var(--wine);
+      color: #fff;
+    }
+
+    .nav-button:disabled {
+      opacity: .3;
+      cursor: default;
+    }
+
+    .page-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .page-dot {
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      border: 0;
+      border-radius: 99px;
+      background: #d9c5bc;
+      cursor: pointer;
+      transition: width .2s ease, background .2s ease;
+    }
+
+    .page-dot.active {
+      width: 24px;
+      background: var(--orange);
+    }
+
+    @media (max-width: 850px) {
+      .course { border-radius: 16px; }
+
+      .workspace {
+        grid-template-columns: 1fr;
+        grid-template-rows: 47px minmax(0, 1fr);
+      }
+
+      .index {
+        padding: 6px 10px;
+        overflow: hidden;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .index-label { display: none; }
+
+      .index-list {
+        display: grid;
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+        gap: 5px;
+      }
+
+      .index-button {
+        display: grid;
+        grid-template-columns: 1fr;
+        min-height: 34px;
+        padding: 3px;
+        text-align: center;
+      }
+
+      .index-number { margin: auto; }
+      .index-text { display: none; }
+
+      .page { padding: 14px 18px; }
+
+      .page-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(245px, .84fr);
+        gap: 16px;
+      }
+
+      .visual-column { grid-template-rows: minmax(125px, .72fr) minmax(220px, 1.28fr); }
+
+      .intro-grid,
+      .closing-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(240px, .75fr);
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      body { padding: 0; }
+
+      .course {
+        width: 100%;
+        height: 100svh;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .topbar {
+        min-height: 62px;
+        padding: 9px 12px;
+      }
+
+      .brand-title { font-size: 18px; }
+
+      .progress-summary {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        min-width: 105px;
+      }
+
+      .progress-copy { text-align: right; font-size: 9px; }
+
+      .workspace { grid-template-rows: 41px minmax(0, 1fr); }
+      .index { padding: 4px 6px; }
+      .index-list { gap: 3px; }
+      .index-button { min-height: 31px; }
+      .index-number { width: 23px; font-size: 8px; }
+
+      .page { padding: 10px 11px; }
+
+      .page-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(0, 1fr);
+        gap: 8px;
+      }
+
+      .page-grid .page-copy {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(130px, .72fr);
+        column-gap: 9px;
+        align-content: start;
+      }
+
+      .page-grid .moment,
+      .page-grid .page-copy h2,
+      .page-grid .skill-subtitle { grid-column: 1; }
+
+      .definition {
+        grid-column: 1;
+        margin-bottom: 0;
+        font-size: 10px;
+        line-height: 1.3;
+      }
+
+      .page h2 {
+        margin-bottom: 3px;
+        font-size: clamp(21px, 7vw, 29px);
+      }
+
+      .skill-subtitle {
+        margin: 0 0 5px;
+        font-size: 11px;
+      }
+
+      .page-grid .insight-box {
+        grid-column: 2;
+        grid-row: 1 / 5;
+        grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 8px;
+        border-left-width: 3px;
+      }
+
+      .insight-icon { width: 23px; font-size: 10px; }
+      .insight-box strong { font-size: 9px; }
+      .insight-box p { font-size: 8.5px; line-height: 1.25; }
+
+      .visual-column {
+        grid-template-columns: minmax(105px, .72fr) minmax(0, 1.28fr);
+        grid-template-rows: 1fr;
+        gap: 7px;
+      }
+
+      .illustration { border-radius: 12px; }
+      .illustration svg { width: 96%; }
+
+      .challenge {
+        grid-template-rows: auto auto 1fr auto;
+        padding: 8px;
+        border-radius: 12px;
+      }
+
+      .challenge-question { margin: 2px 0 4px; font-size: 9px; }
+      .options { gap: 3px; }
+      .option { padding: 4px 5px; font-size: 8px; }
+      .feedback { min-height: 27px; margin-top: 4px; padding: 4px 5px; font-size: 8px; }
+
+      .intro-grid,
+      .closing-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto minmax(0, 1fr);
+        gap: 8px;
+      }
+
+      .intro-lead { margin-bottom: 7px; font-size: 11px; line-height: 1.35; }
+      .route-preview { margin-top: 7px; gap: 3px; }
+      .route-chip { padding: 5px 2px; border-top-width: 3px; font-size: 7px; }
+      .intro-visual { height: auto; min-height: 0; border-radius: 14px; }
+
+      .summary-list { margin-top: 8px; gap: 3px; }
+      .summary-item { padding: 6px 2px; font-size: 7px; border-bottom-width: 3px; }
+      .closing-card { padding: 12px; border-radius: 14px; }
+      .closing-card .arrow { width: 42px; margin-bottom: 7px; font-size: 22px; }
+      .closing-card strong { font-size: 18px; }
+      .closing-card p { margin-top: 5px; font-size: 9px; }
+
+      .controls {
+        min-height: 54px;
+        padding: 6px 9px;
+        gap: 7px;
+      }
+
+      .nav-button {
+        min-width: 94px;
+        min-height: 36px;
+        padding: 6px 10px;
+        font-size: 10px;
+      }
+
+      .page-dot { width: 6px; height: 6px; }
+      .page-dot.active { width: 17px; }
+    }
+
+    @media (max-height: 650px) {
+      .topbar { min-height: 58px; padding-top: 8px; padding-bottom: 8px; }
+      .workspace { grid-template-columns: 190px minmax(0, 1fr); }
+      .index { padding-top: 9px; padding-bottom: 9px; }
+      .index-button { min-height: 38px; padding-top: 4px; padding-bottom: 4px; }
+      .page { padding-top: 12px; padding-bottom: 12px; }
+      .definition { margin-bottom: 8px; font-size: 12px; line-height: 1.35; }
+      .insight-box { padding-top: 8px; padding-bottom: 8px; }
+      .visual-column { grid-template-rows: minmax(110px, .65fr) minmax(190px, 1.35fr); }
+      .challenge { padding: 9px; }
+      .option { padding-top: 4px; padding-bottom: 4px; }
+      .controls { min-height: 54px; padding-top: 6px; padding-bottom: 6px; }
+    }
+
+    @media (max-width: 620px) and (max-height: 650px) {
+      .workspace { grid-template-columns: 1fr; grid-template-rows: 37px minmax(0, 1fr); }
+      .index-button { min-height: 27px; }
+      .visual-column { grid-template-rows: 1fr; }
+      .page-grid .page-copy h2 { font-size: 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
   </style>
 </head>
 <body>
-<main class="app" id="app">
-  <div class="palette" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-  <header class="hero"><span class="eyebrow">Unidad 1 · Dimensión Ser</span><h1>El viaje hacia tu interior</h1><p class="lead">Una experiencia para observarte con curiosidad, reconocer lo que te orienta y habitar el presente con mayor autenticidad.</p></header>
-  <div class="progress-wrap"><div class="progress-meta"><span id="progressText">Momento 1 de 7</span><span id="progressPercent">14%</span></div><div class="track"><div class="bar" id="bar"></div></div></div>
-  <div class="layout">
-    <aside class="side"><p class="side-title">Tu recorrido</p><nav class="nav" id="nav" aria-label="Secciones de la unidad"></nav></aside>
-    <section class="stage">
-      <article class="panel active" data-title="Autoconocimiento"><span class="section-tag">Momento 1</span><h2>¿Qué es el autoconocimiento?</h2><p>Imagina que llevas contigo un espejo. No uno que refleje solo tu imagen exterior, sino uno que te muestra por dentro: emociones, recuerdos, pensamientos y deseos.</p><p>El <strong>autoconocimiento</strong> es ese espejo. No se trata de encontrar respuestas definitivas, sino de hacernos preguntas que nos permitan reconocer cómo somos y cómo actuamos.</p><p>Es un proceso continuo de <strong>reconocimiento personal</strong>, con momentos de claridad y también de confusión. No hay un mapa único para todos, pero sí preguntas que pueden orientar la ruta.</p><div class="callout"><strong>Estar presente parece simple, pero en un mundo que exige rapidez y productividad se convierte en un acto revolucionario.</strong> Cultivar tu vida interior es crear espacio para observar pensamientos, emociones y sensaciones con curiosidad. No se trata de cambiarlos, sino de escucharlos.</div><div class="question">¿Cuándo fue la última vez que te escuchaste sin interrumpirte?</div><div class="media-slot"><div class="media-icon">▶</div><strong>Audio pendiente: “Mi ser como un árbol”</strong><small>Meditación guiada inspirada en “He llegado, estoy en casa”. Sustituye este bloque cuando tengas el archivo de audio.</small></div></article>
-      <article class="panel" data-title="Brújula interior"><span class="section-tag">Momento 2</span><h2>La brújula interior: valores que orientan</h2><p>Imagina que estás en medio de una tormenta en el mar. Hay olas altas, la visibilidad es baja y no hay tierra firme a la vista. En ese escenario, ¿qué te ayuda a decidir hacia dónde remar?</p><p><strong>Selecciona cada dirección para descubrir una pregunta.</strong></p><div class="compass"><button class="reveal" data-text="¿Qué valor quiero que oriente mis decisiones, incluso cuando el camino no está claro?">Norte · Valores</button><button class="reveal" data-text="¿Qué propósito le da sentido a lo que hago y a la manera como quiero vivir?">Este · Propósito</button><button class="reveal" data-text="¿Qué necesito cuidar para mantenerme en conexión conmigo?">Sur · Cuidado</button><button class="reveal" data-text="¿Qué decisión sería más coherente con aquello que considero importante?">Oeste · Coherencia</button></div><div class="reveal-box" id="revealBox" aria-live="polite">Elige una dirección de tu brújula interior.</div><div class="media-slot"><div class="media-icon">▧</div><strong>Imagen pendiente: brújula en medio de la tormenta</strong><small>Espacio preparado para insertar la ilustración definitiva.</small></div><div class="callout">Cuando conectas con tu <strong>brújula interior</strong>, no necesitas tener todas las respuestas. Incluso en la oscuridad, puedes reconocer en qué dirección se encuentra tu verdad. Tus valores pueden transformarse y evolucionar; lo esencial es mantener la práctica de mirar hacia dentro, especialmente cuando afuera todo es ruido.</div></article>
-      <article class="panel" data-title="Autenticidad"><span class="section-tag">Momento 3</span><h2>Integridad y autenticidad: ser tú sin máscaras</h2><h3>¿Actúas desde tu autenticidad?</h3><p>A veces actuamos por inercia. Nos adaptamos a lo que otros esperan, decimos lo que parece correcto y mostramos aquello que creemos que gustará. Poco a poco podemos alejarnos de lo que realmente somos.</p><p>La autenticidad consiste en <strong>vivir en coherencia con lo que sentimos, pensamos y valoramos</strong>, incluso cuando esto nos hace vulnerables. Ser íntegro no es ser perfecto, sino ser honesto contigo, incluso en lo pequeño.</p><div class="callout"><strong>Ejercicio:</strong> selecciona una conducta y luego el grupo al que consideras que pertenece.</div><div class="chips" id="chips"></div><div class="sort-grid"><button class="dropzone" data-kind="auth"><h4>Autenticidad</h4><div class="drop-content"></div></button><button class="dropzone" data-kind="false"><h4>Falsas apariencias</h4><div class="drop-content"></div></button></div><div class="feedback" id="sortFeedback" aria-live="polite"></div><h3>Integridad</h3><p>No se trata de ser “correcto” todo el tiempo. Se trata de alinear lo que piensas, sientes y haces, incluso cuando nadie está mirando.</p><h3>Autenticidad</h3><p>No es decir todo lo que piensas sin filtro, sino atreverte a ser tú, sin editarte de más por miedo a no encajar.</p><div class="question">Ser auténtico no significa ser igual siempre. Significa estar en coherencia contigo en cada momento.</div></article>
-      <article class="panel" data-title="Aprender"><span class="section-tag">Momento 4</span><h2>Apertura y mentalidad de aprendizaje</h2><p>Una mentalidad curiosa nos permite aceptar los cambios, explorar posibilidades y crecer. Abre la puerta a nuevas ideas, formas de vivir y maneras de resolver problemas.</p><div class="media-slot"><div class="media-icon">♫</div><strong>Audio pendiente: mentalidad curiosa</strong><small>Este espacio alojará el recurso sonoro de la sección.</small></div><h3>¿Por qué es importante?</h3><p>En lugar de ver los errores como fracasos, podemos entenderlos como oportunidades. En lugar de resistir el cambio, podemos enfrentarlo con preguntas y no con miedo.</p><div class="media-slot"><div class="media-icon">▧</div><strong>Imagen pendiente: semilla y crecimiento</strong><small>Espacio reservado para la imagen que acompañará la metáfora.</small></div><div class="callout"><strong>Crecer no siempre es cómodo.</strong> Cuando cultivamos una mentalidad abierta, somos como una semilla que se atreve a romper su forma para convertirse en algo nuevo.</div><div class="question">Cada vez que eliges aprender algo, aunque no lo domines al principio, estás apostando por tu futuro yo.</div></article>
-      <article class="panel" data-title="Autoconciencia"><span class="section-tag">Momento 5</span><h2>Autoconciencia: mirarte sin filtros</h2><p>Hay un momento del día —al despertar o justo antes de dormir— en el que nos encontramos con nosotros mismos, sin distracciones, pantallas ni excusas.</p><div class="question">¿Cómo me estoy sintiendo realmente?</div><p>Desarrollar <strong>autoconciencia</strong> es aprender a hacer esa pregunta sin miedo. Es mirar hacia adentro, no para juzgarte, sino para comprenderte; reconocer emociones, pensamientos y deseos, incluso cuando son contradictorios o incómodos.</p><p>También es la base para relacionarte con otros de manera auténtica y compasiva. Si no sabes qué te pasa, ¿cómo puedes comunicarlo? Si no reconoces lo que necesitas, ¿cómo podrías pedirlo?</p><h3>Autoconciencia no es autoexigencia</h3><p>No consiste en analizarte o corregirte todo el tiempo. Es una actitud de <strong>escucha interna constante y amable</strong>.</p><h3>Check-in emocional diario</h3><div class="checkin"><div><span>1</span><b>¿Qué sentí hoy con más intensidad?</b></div><div><span>2</span><b>¿Qué situación activó esa emoción?</b></div><div><span>3</span><b>¿Qué necesito ahora para estar mejor?</b></div></div><div class="callout"><strong>Reconocerte es el primer acto de cuidado.</strong><br>No se puede transformar lo que no se nombra. Mirarte con honestidad, aunque sea por un instante, puede ser el inicio de un cambio profundo.</div></article>
-      <article class="panel" data-title="Presencia"><span class="section-tag">Momento 6</span><h2>Presencia: estar aquí y ahora</h2><div class="media-slot"><div class="media-icon">▧</div><strong>Imagen pendiente: presencia consciente</strong><small>Espacio preparado para el recurso visual definitivo.</small></div><p><strong>¿Alguna vez estuviste en una conversación, pero con la mente en otro lugar? ¿O llegaste a un sitio sin recordar cómo lo hiciste?</strong></p><p>Vivimos en un mundo que nos empuja hacia el futuro o nos arrastra al pasado. La presencia es la capacidad de estar <strong>aquí y ahora</strong>, con todos los sentidos y la conciencia, sin querer cambiar nada y sin juzgar.</p><p>No se trata de dejar de pensar, sino de <strong>observarte con atención y sin reaccionar automáticamente</strong>. Cuando estás presente, no huyes ni te adelantas: te encuentras contigo y con el mundo tal como es.</p><div class="media-slot"><div class="media-icon">▶</div><strong>Audio pendiente: “Un minuto de presencia”</strong><small>Este bloque podrá reemplazarse por el reproductor del audio.</small></div><h3>Beneficios de la presencia</h3><div class="benefits"><div class="benefit"><b>Mayor claridad</b>Observas antes de reaccionar.</div><div class="benefit"><b>Escucha genuina</b>Te conectas mejor con otros.</div><div class="benefit"><b>Calma interior</b>Disminuyes el piloto automático.</div><div class="benefit"><b>Autocuidado</b>Reconoces lo que necesitas.</div><div class="benefit"><b>Coherencia</b>Eliges desde tus valores.</div><div class="benefit"><b>Gratitud</b>Habitas con mayor plenitud lo cotidiano.</div></div><div class="callout">Has recorrido un camino profundo: miraste hacia dentro, hiciste silencio y exploraste emociones, valores, pensamientos y sensaciones. <strong>Esta no es una unidad más; es un espacio que te invita a volver a ti.</strong></div></article>
-      <article class="panel" data-title="Actividad final"><span class="section-tag">Momento 7</span><h2>Autorretrato simbólico: exploración de la isla interior</h2><p>Ahora que has recorrido, a través de la meditación, el camino hacia tu isla interior —ese lugar simbólico que representa tu refugio, tu cuerpo y tu hogar—, te invitamos a habitarlo con presencia.</p><p>Vas a <strong>dibujar la silueta de tu cuerpo y explorarla como un mapa de tu momento actual</strong>. Es un autorretrato pedagógico, simbólico y emocional.</p><div class="callout">Hazlo con calma. Conecta contigo. Invita a alguien si quieres compartir el proceso. Lo importante no es el resultado estético, sino <strong>lo que descubres en ti mientras lo haces</strong>.</div><h3>Materiales sugeridos</h3><p>Tres pliegos de papel grande; lápices, colores y marcadores; revistas para collage; tijeras y pegante; lanas, cintas, adhesivos o botones de manera opcional; tu cuerpo y tu disposición.</p><h3>Pasos de la actividad</h3><div class="steps"><div class="step"><span class="step-num">1</span><span><b>Prepara el espacio.</b><br>Busca un lugar tranquilo y organiza los materiales.</span></div><div class="step"><span class="step-num">2</span><span><b>Siluetea tu cuerpo.</b><br>Une los pliegos y pide ayuda para marcar tu contorno.</span></div><div class="step"><span class="step-num">3</span><span><b>Observa con atención.</b><br>Reconoce las líneas, espacios y formas que llaman tu atención.</span></div><div class="step"><span class="step-num">4</span><span><b>Interpreta y expresa.</b><br>Agrega colores, palabras, recortes y símbolos.</span></div><div class="step"><span class="step-num">5</span><span><b>Escribe tu reflexión.</b><br>Registra lo que la representación expresa sobre tu momento actual.</span></div></div><div class="media-slot"><div class="media-icon">▧</div><strong>Imagen pendiente: ejemplo del autorretrato simbólico</strong><small>Espacio reservado para la fotografía de apoyo.</small></div><h3>Carrusel de cinco declaraciones</h3><div class="carousel" aria-roledescription="carrusel"><button class="car-btn car-prev" aria-label="Declaración anterior">‹</button><div id="slides"></div><button class="car-btn car-next" aria-label="Declaración siguiente">›</button><div class="dots" id="dots"></div></div><div class="complete"><strong>Has llegado al cierre de la experiencia.</strong><p>Respira, agradece tu disposición a mirar hacia dentro y reconoce que cada paso cuenta.</p><a href="#" onclick="window.parent!==window?window.parent.postMessage({type:'idg-course-complete'},'*'):history.back();return false">Cerrar esta experiencia y volver a Moodle</a></div></article>
-      <div class="controls"><button class="btn" id="prev">← Anterior</button><button class="btn primary" id="next">Continuar →</button></div>
-    </section>
-  </div>
-</main>
-<script>
-  const panels=[...document.querySelectorAll('.panel')],nav=document.getElementById('nav'),bar=document.getElementById('bar'),progressText=document.getElementById('progressText'),progressPercent=document.getElementById('progressPercent');let current=0;
-  panels.forEach((p,i)=>{const b=document.createElement('button');b.textContent=(i+1)+'. '+p.dataset.title;b.onclick=()=>show(i);nav.appendChild(b)});
-  function show(i){current=Math.max(0,Math.min(i,panels.length-1));panels.forEach((p,n)=>p.classList.toggle('active',n===current));[...nav.children].forEach((b,n)=>{b.classList.toggle('active',n===current);b.setAttribute('aria-current',n===current?'step':'false')});const pct=Math.round((current+1)/panels.length*100);bar.style.width=pct+'%';progressText.textContent=`Momento ${current+1} de ${panels.length}`;progressPercent.textContent=pct+'%';document.getElementById('prev').disabled=current===0;document.getElementById('next').textContent=current===panels.length-1?'Volver al inicio ↺':'Continuar →';document.querySelector('.stage').scrollIntoView({behavior:'smooth',block:'start'});resize()}
-  document.getElementById('prev').onclick=()=>show(current-1);document.getElementById('next').onclick=()=>show(current===panels.length-1?0:current+1);
-  document.querySelectorAll('.reveal').forEach(b=>b.onclick=()=>{document.querySelectorAll('.reveal').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('revealBox').textContent=b.dataset.text;resize()});
-  const conducts=[['Reconocer un error aunque incomode','auth'],['Decir que estoy bien para evitar preguntas','false'],['Pedir ayuda cuando la necesito','auth'],['Cambiar mi opinión solo para encajar','false'],['Expresar un límite con respeto','auth'],['Aparentar seguridad para ocultar lo que siento','false']];let selected=null,placed=0;const chips=document.getElementById('chips');conducts.forEach((c,i)=>{const b=document.createElement('button');b.className='chip';b.textContent=c[0];b.dataset.kind=c[1];b.onclick=()=>{document.querySelectorAll('.chip').forEach(x=>x.classList.remove('selected'));selected=b;b.classList.add('selected')};chips.appendChild(b)});document.querySelectorAll('.dropzone').forEach(z=>z.onclick=()=>{if(!selected)return;const ok=selected.dataset.kind===z.dataset.kind,item=document.createElement('span');item.className='placed';item.textContent=(ok?'✓ ':'Inténtalo de nuevo: ')+selected.textContent;if(ok){z.querySelector('.drop-content').appendChild(item);selected.remove();selected=null;placed++}document.getElementById('sortFeedback').textContent=ok?(placed===conducts.length?'¡Muy bien! Las conductas auténticas construyen relaciones más genuinas.':'Correcto. Continúa clasificando.'):'Revisa la intención de esta conducta y prueba en el otro grupo.';resize()});
-  const declarations=['Reconocerme es el primer acto de cuidado.','Mis valores son la brújula que orienta mis decisiones.','La autenticidad comienza cuando dejo de esconderme de mí.','Cada error puede convertirse en una oportunidad para aprender.','Habitar el presente es volver a casa.'];const slides=document.getElementById('slides'),dots=document.getElementById('dots');let slide=0;declarations.forEach((t,i)=>{const d=document.createElement('div');d.className='slide';d.innerHTML=`<span class="number">DECLARACIÓN ${i+1} DE 5</span><blockquote>${t}</blockquote>`;slides.appendChild(d);const dot=document.createElement('button');dot.className='dot';dot.setAttribute('aria-label','Ir a declaración '+(i+1));dot.onclick=()=>showSlide(i);dots.appendChild(dot)});function showSlide(i){slide=(i+declarations.length)%declarations.length;[...slides.children].forEach((x,n)=>x.classList.toggle('active',n===slide));[...dots.children].forEach((x,n)=>x.classList.toggle('active',n===slide));resize()}document.querySelector('.car-prev').onclick=()=>showSlide(slide-1);document.querySelector('.car-next').onclick=()=>showSlide(slide+1);
-  function resize(){setTimeout(()=>window.parent!==window&&window.parent.postMessage({type:'idg-scorm-resize',height:document.documentElement.scrollHeight},'*'),60)}window.addEventListener('resize',resize);show(0);showSlide(0);resize();
-</script>
+  <main class="course" aria-label="Unidad 1: dimensión Ser">
+    <div class="palette" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+
+    <header class="topbar">
+      <div>
+        <span class="brand-kicker">Objetivos de Desarrollo Interior</span>
+        <h1 class="brand-title">Unidad 1 · Dimensión Ser</h1>
+      </div>
+      <div class="progress-summary" aria-label="Progreso del recorrido">
+        <span class="progress-copy" id="progressCopy">Momento 1 de 7</span>
+        <div class="track" aria-hidden="true"><div class="bar" id="progressBar"></div></div>
+      </div>
+    </header>
+
+    <div class="workspace">
+      <aside class="index" aria-label="Índice de momentos">
+        <p class="index-label">Índice del recorrido</p>
+        <nav class="index-list" id="indexList"></nav>
+      </aside>
+
+      <section class="stage" id="stage" aria-live="polite">
+        <article class="page active" data-title="La dimensión Ser" data-caption="Punto de partida">
+          <div class="intro-grid">
+            <div class="page-copy">
+              <span class="moment">Momento 1 · Punto de partida</span>
+              <h2>Ser: el cambio comienza dentro</h2>
+              <p class="intro-lead">La dimensión <strong>Ser</strong> fortalece nuestra relación con nosotros mismos. Nos ayuda a reconocer lo que valoramos, comprender lo que sentimos y responder con mayor conciencia.</p>
+              <div class="insight-box" style="--accent: var(--wine);">
+                <span class="insight-icon">✦</span>
+                <div><strong>Propósito del recorrido</strong><p>Explorar cinco habilidades que convierten la vida interior en una base para actuar con coherencia y contribuir al bienestar colectivo.</p></div>
+              </div>
+              <div class="route-preview" aria-label="Cinco habilidades de la dimensión Ser">
+                <span class="route-chip" style="--chip: var(--sand);">Brújula interior</span>
+                <span class="route-chip" style="--chip: var(--pink);">Integridad y autenticidad</span>
+                <span class="route-chip" style="--chip: var(--coral);">Apertura y aprendizaje</span>
+                <span class="route-chip" style="--chip: var(--orange);">Autoconciencia</span>
+                <span class="route-chip" style="--chip: var(--wine);">Presencia</span>
+              </div>
+            </div>
+
+            <div class="intro-visual">
+              <svg viewBox="0 0 420 420" role="img" aria-label="Ilustración de una persona conectada con las cinco habilidades de la dimensión Ser">
+                <defs>
+                  <filter id="shadowIntro" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#7b283f" flood-opacity=".13"/></filter>
+                  <linearGradient id="bodyGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#eb9ab0"/><stop offset="1" stop-color="#ee5949"/></linearGradient>
+                </defs>
+                <circle cx="210" cy="210" r="166" fill="#fffaf4" stroke="#e7d9cc" stroke-width="2"/>
+                <circle cx="210" cy="210" r="132" fill="none" stroke="#dcc29d" stroke-width="8" stroke-dasharray="55 18"/>
+                <circle cx="210" cy="210" r="104" fill="none" stroke="#eb9ab0" stroke-width="3" stroke-dasharray="7 11"/>
+                <g filter="url(#shadowIntro)">
+                  <circle cx="210" cy="144" r="43" fill="url(#bodyGrad)"/>
+                  <path d="M137 317c8-78 32-117 73-117s65 39 73 117" fill="#7b283f"/>
+                  <circle cx="210" cy="237" r="18" fill="#ff7e29"/>
+                  <path d="M210 216v42M189 237h42" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+                </g>
+                <g fill="#fff" stroke="#7b283f" stroke-width="2">
+                  <circle cx="210" cy="44" r="22"/><circle cx="349" cy="145" r="22"/><circle cx="296" cy="316" r="22"/><circle cx="124" cy="316" r="22"/><circle cx="71" cy="145" r="22"/>
+                </g>
+                <g fill="#7b283f" font-family="Segoe UI,Arial" font-size="13" font-weight="800" text-anchor="middle">
+                  <text x="210" y="49">01</text><text x="349" y="150">02</text><text x="296" y="321">03</text><text x="124" y="321">04</text><text x="71" y="150">05</text>
+                </g>
+                <path d="M210 67v32M329 160l-28 16M282 296l-20-26M138 296l20-26M91 160l28 16" stroke="#cdb8ad" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+        </article>
+
+        <article class="page" data-title="Brújula interior" data-caption="Valores y propósito">
+          <div class="page-grid">
+            <div class="page-copy">
+              <span class="moment">Momento 2 · Habilidad 1</span>
+              <h2>Brújula interior</h2>
+              <p class="skill-subtitle">Valores y propósito que orientan</p>
+              <p class="definition">Es la capacidad de conectar con nuestros <strong>valores y propósito</strong> para orientar decisiones y acciones, incluso cuando el camino no es claro o el entorno genera presión.</p>
+              <div class="insight-box" style="--accent: var(--sand);">
+                <span class="insight-icon">N</span>
+                <div><strong>Se hace visible cuando…</strong><p>Pausas antes de decidir, reconoces lo que es verdaderamente importante y eliges una dirección coherente con ello.</p></div>
+              </div>
+            </div>
+            <div class="visual-column">
+              <div class="illustration">
+                <svg viewBox="0 0 360 220" role="img" aria-label="Ilustración de una brújula interior">
+                  <defs><filter id="s1" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="7" stdDeviation="6" flood-color="#7b283f" flood-opacity=".15"/></filter></defs>
+                  <circle cx="180" cy="110" r="82" fill="#fff" stroke="#dcc29d" stroke-width="12" filter="url(#s1)"/>
+                  <circle cx="180" cy="110" r="58" fill="#fffaf4" stroke="#eadccf" stroke-width="2"/>
+                  <path d="M180 48l18 62-18 62-18-62z" fill="#7b283f"/>
+                  <path d="M180 48l18 62h-18z" fill="#ee5949"/>
+                  <circle cx="180" cy="110" r="9" fill="#ff7e29" stroke="#fff" stroke-width="4"/>
+                  <g fill="#7b283f" font-family="Segoe UI,Arial" font-size="13" font-weight="800" text-anchor="middle"><text x="180" y="17">N</text><text x="180" y="214">S</text><text x="286" y="115">E</text><text x="74" y="115">O</text></g>
+                  <circle cx="65" cy="55" r="10" fill="#eb9ab0"/><circle cx="300" cy="52" r="7" fill="#ff7e29"/><circle cx="307" cy="174" r="11" fill="#ee5949"/><circle cx="58" cy="177" r="6" fill="#dcc29d"/>
+                </svg>
+              </div>
+              <div class="challenge" data-challenge>
+                <span class="challenge-tag">Reto de decisión</span>
+                <p class="challenge-question">Recibes una propuesta atractiva, pero aceptarla exige actuar contra uno de tus valores centrales. ¿Qué harías primero?</p>
+                <div class="options">
+                  <button class="option" data-correct="false" data-feedback="La rapidez puede ocultar aquello que es importante para ti. Intenta crear primero un espacio de reflexión.">Aceptar de inmediato para no perder la oportunidad.</button>
+                  <button class="option" data-correct="true" data-feedback="¡Buena elección! Consultar tu brújula interior permite decidir desde tus valores y no solo desde la presión del momento.">Pausar y revisar si la decisión es coherente con mis valores.</button>
+                  <button class="option" data-correct="false" data-feedback="Escuchar a otros puede ayudar, pero la decisión necesita conectarse también con tus propios valores.">Dejar que otra persona decida por mí.</button>
+                </div>
+                <div class="feedback" aria-live="polite">Elige una respuesta y descubre qué habilidad estás poniendo en práctica.</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="page" data-title="Integridad y autenticidad" data-caption="Coherencia personal">
+          <div class="page-grid">
+            <div class="page-copy">
+              <span class="moment">Momento 3 · Habilidad 2</span>
+              <h2>Integridad y autenticidad</h2>
+              <p class="skill-subtitle">Coherencia entre pensar, sentir y actuar</p>
+              <p class="definition">Consiste en procurar coherencia entre lo que <strong>pensamos, sentimos, decimos y hacemos</strong>. Implica actuar desde nuestros valores con honestidad, sin exigirnos perfección ni construir falsas apariencias.</p>
+              <div class="insight-box" style="--accent: var(--pink);">
+                <span class="insight-icon">＝</span>
+                <div><strong>Se hace visible cuando…</strong><p>Reconoces un error, expresas un límite con respeto o defiendes lo que consideras correcto aun cuando nadie está mirando.</p></div>
+              </div>
+            </div>
+            <div class="visual-column">
+              <div class="illustration">
+                <svg viewBox="0 0 360 220" role="img" aria-label="Ilustración de coherencia entre el mundo interior y las acciones">
+                  <rect x="49" y="35" width="118" height="150" rx="58" fill="#f9e7ec" stroke="#eb9ab0" stroke-width="3"/>
+                  <rect x="193" y="35" width="118" height="150" rx="58" fill="#fff4ef" stroke="#ee5949" stroke-width="3"/>
+                  <circle cx="108" cy="89" r="25" fill="#eb9ab0"/>
+                  <path d="M73 158c5-38 17-57 35-57s30 19 35 57" fill="#7b283f"/>
+                  <circle cx="252" cy="89" r="25" fill="#ee5949"/>
+                  <path d="M217 158c5-38 17-57 35-57s30 19 35 57" fill="#7b283f"/>
+                  <path d="M157 110h46" stroke="#ff7e29" stroke-width="8" stroke-linecap="round"/>
+                  <path d="M189 97l14 13-14 13" fill="none" stroke="#ff7e29" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M89 89l13 13 25-28M233 89l13 13 25-28" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                  <text x="108" y="205" fill="#7b283f" font-family="Segoe UI,Arial" font-size="12" font-weight="800" text-anchor="middle">LO QUE SOY</text>
+                  <text x="252" y="205" fill="#7b283f" font-family="Segoe UI,Arial" font-size="12" font-weight="800" text-anchor="middle">LO QUE HAGO</text>
+                </svg>
+              </div>
+              <div class="challenge" data-challenge>
+                <span class="challenge-tag">Reto de coherencia</span>
+                <p class="challenge-question">Un equipo propone presentar como propia una idea construida por otra persona. ¿Qué respuesta refleja mayor integridad?</p>
+                <div class="options">
+                  <button class="option" data-correct="false" data-feedback="Callar evita el conflicto inmediato, pero no protege la coherencia ni el reconocimiento justo.">Guardar silencio para evitar incomodidades.</button>
+                  <button class="option" data-correct="true" data-feedback="¡Exacto! Reconocer la autoría y expresar el desacuerdo con respeto alinea valores, palabras y acciones.">Reconocer la autoría y plantear el desacuerdo con respeto.</button>
+                  <button class="option" data-correct="false" data-feedback="Alejarte sin expresar lo que valoras deja intacta la situación. La autenticidad también requiere una voz respetuosa.">Retirarme del equipo sin explicar la razón.</button>
+                </div>
+                <div class="feedback" aria-live="polite">Selecciona la respuesta más coherente con esta habilidad.</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="page" data-title="Apertura y aprendizaje" data-caption="Curiosidad y cambio">
+          <div class="page-grid">
+            <div class="page-copy">
+              <span class="moment">Momento 4 · Habilidad 3</span>
+              <h2>Apertura y mentalidad de aprendizaje</h2>
+              <p class="skill-subtitle">Curiosidad para aprender, desaprender y crecer</p>
+              <p class="definition">Es la disposición a <strong>cuestionar supuestos, aprender y desaprender</strong>. Nos permite recibir nuevas perspectivas, valorar los errores como información útil y adaptarnos al cambio con curiosidad.</p>
+              <div class="insight-box" style="--accent: var(--coral);">
+                <span class="insight-icon">↗</span>
+                <div><strong>Se hace visible cuando…</strong><p>Preguntas antes de concluir, pruebas una alternativa, recibes retroalimentación y conviertes un resultado inesperado en aprendizaje.</p></div>
+              </div>
+            </div>
+            <div class="visual-column">
+              <div class="illustration">
+                <svg viewBox="0 0 360 220" role="img" aria-label="Ilustración de una mente abierta al aprendizaje">
+                  <path d="M105 169c-9-17-14-37-14-58 0-50 39-88 89-88 44 0 81 32 87 75 3 20-1 39-10 55-7 12-17 21-28 29H130c-10-5-19-9-25-13z" fill="#f9e3e7" stroke="#eb9ab0" stroke-width="3"/>
+                  <path d="M123 86c19-27 43-40 74-38M115 111c26-20 57-28 92-21M124 139c23-10 48-12 76-5" fill="none" stroke="#7b283f" stroke-width="5" stroke-linecap="round"/>
+                  <path d="M216 174c0-31 16-54 48-69" fill="none" stroke="#6f8555" stroke-width="6" stroke-linecap="round"/>
+                  <path d="M261 109c-22 1-37 12-43 33 23 1 39-10 43-33z" fill="#a7b77d"/>
+                  <path d="M265 104c2-23 14-38 36-45 2 24-10 40-36 45z" fill="#ff7e29"/>
+                  <circle cx="64" cy="54" r="10" fill="#dcc29d"/><circle cx="304" cy="168" r="8" fill="#ee5949"/>
+                  <path d="M55 173l12-23 12 23z" fill="#eb9ab0"/>
+                </svg>
+              </div>
+              <div class="challenge" data-challenge>
+                <span class="challenge-tag">Reto de aprendizaje</span>
+                <p class="challenge-question">Una estrategia en la que trabajaste mucho no produjo el resultado esperado. ¿Cuál respuesta activa una mentalidad de aprendizaje?</p>
+                <div class="options">
+                  <button class="option" data-correct="false" data-feedback="Repetir sin revisar puede mantener el mismo problema. Aprender requiere observar qué necesita cambiar.">Repetir exactamente lo mismo hasta que funcione.</button>
+                  <button class="option" data-correct="true" data-feedback="¡Así es! Analizar, pedir otras perspectivas y experimentar convierte el resultado en una fuente de aprendizaje.">Analizar lo ocurrido, escuchar otras perspectivas y probar un ajuste.</button>
+                  <button class="option" data-correct="false" data-feedback="Abandonar protege del error, pero cierra la posibilidad de aprender de la experiencia.">Concluir que no soy capaz y abandonar.</button>
+                </div>
+                <div class="feedback" aria-live="polite">Elige la reacción que abre una nueva posibilidad de crecimiento.</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="page" data-title="Autoconciencia" data-caption="Escucha interior">
+          <div class="page-grid">
+            <div class="page-copy">
+              <span class="moment">Momento 5 · Habilidad 4</span>
+              <h2>Autoconciencia</h2>
+              <p class="skill-subtitle">Reconocer lo que ocurre dentro de ti</p>
+              <p class="definition">Es la capacidad de reconocer <strong>emociones, pensamientos, sensaciones, necesidades y patrones de conducta</strong> sin juzgarlos. Nombrar la experiencia interior facilita decisiones más conscientes.</p>
+              <div class="insight-box" style="--accent: var(--orange);">
+                <span class="insight-icon">◉</span>
+                <div><strong>Se hace visible cuando…</strong><p>Identificas qué estás sintiendo, reconoces qué activó esa emoción y distingues lo que necesitas antes de responder.</p></div>
+              </div>
+            </div>
+            <div class="visual-column">
+              <div class="illustration">
+                <svg viewBox="0 0 360 220" role="img" aria-label="Ilustración de autoconciencia y observación interior">
+                  <circle cx="180" cy="108" r="78" fill="#fff3e9" stroke="#ff7e29" stroke-width="3"/>
+                  <circle cx="180" cy="83" r="27" fill="#ee5949"/>
+                  <path d="M128 175c7-48 24-72 52-72s45 24 52 72" fill="#7b283f"/>
+                  <circle cx="180" cy="123" r="15" fill="#fff" opacity=".92"/>
+                  <circle cx="180" cy="123" r="6" fill="#ff7e29"/>
+                  <g fill="none" stroke-linecap="round">
+                    <path d="M180 16v-12M180 212v-12M88 108H76M284 108h-12" stroke="#dcc29d" stroke-width="5"/>
+                    <path d="M115 43l-9-9M254 182l-9-9M245 43l9-9M106 182l9-9" stroke="#eb9ab0" stroke-width="5"/>
+                  </g>
+                  <g fill="#eb9ab0"><circle cx="106" cy="80" r="7"/><circle cx="260" cy="78" r="10"/><circle cx="105" cy="145" r="10"/><circle cx="257" cy="148" r="7"/></g>
+                </svg>
+              </div>
+              <div class="challenge" data-challenge>
+                <span class="challenge-tag">Reto de escucha interior</span>
+                <p class="challenge-question">Sales de una conversación tensa con respiración rápida y hombros rígidos. ¿Cuál sería el primer paso más consciente?</p>
+                <div class="options">
+                  <button class="option" data-correct="true" data-feedback="¡Correcto! Observar cuerpo, emoción y necesidad antes de actuar amplía tu capacidad de elegir una respuesta.">Pausar, reconocer la emoción y preguntarme qué necesito.</button>
+                  <button class="option" data-correct="false" data-feedback="Distraerte puede aplazar la sensación, pero no ayuda a comprender lo que tu experiencia interior está mostrando.">Ignorar la sensación y ocuparme en otra cosa.</button>
+                  <button class="option" data-correct="false" data-feedback="Responder de inmediato puede amplificar la reacción automática. Primero conviene reconocer lo que ocurre dentro.">Enviar de inmediato un mensaje para descargar lo que siento.</button>
+                </div>
+                <div class="feedback" aria-live="polite">Observa cuál opción comienza por reconocer la experiencia interior.</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="page" data-title="Presencia" data-caption="Aquí y ahora">
+          <div class="page-grid">
+            <div class="page-copy">
+              <span class="moment">Momento 6 · Habilidad 5</span>
+              <h2>Presencia</h2>
+              <p class="skill-subtitle">Habitar el aquí y el ahora</p>
+              <p class="definition">Es la capacidad de estar en el presente con <strong>atención plena</strong>. Nos ayuda a observar antes de reaccionar, escuchar con profundidad y responder de una manera más serena y consciente.</p>
+              <div class="insight-box" style="--accent: var(--wine);">
+                <span class="insight-icon">●</span>
+                <div><strong>Se hace visible cuando…</strong><p>Detienes el piloto automático, prestas atención a una conversación y das espacio a lo que ocurre sin adelantar conclusiones.</p></div>
+              </div>
+            </div>
+            <div class="visual-column">
+              <div class="illustration">
+                <svg viewBox="0 0 360 220" role="img" aria-label="Ilustración de presencia y atención plena">
+                  <circle cx="180" cy="110" r="86" fill="#f7e8ec"/>
+                  <circle cx="180" cy="110" r="66" fill="none" stroke="#eb9ab0" stroke-width="3"/>
+                  <circle cx="180" cy="110" r="46" fill="none" stroke="#ee5949" stroke-width="3"/>
+                  <circle cx="180" cy="110" r="27" fill="#7b283f"/>
+                  <circle cx="180" cy="110" r="9" fill="#fff"/>
+                  <path d="M180 15v19M180 186v19M85 110H66M294 110h-19" stroke="#dcc29d" stroke-width="5" stroke-linecap="round"/>
+                  <path d="M113 43l14 14M247 177l-14-14M247 43l-14 14M113 177l14-14" stroke="#ff7e29" stroke-width="5" stroke-linecap="round"/>
+                  <path d="M44 110c18-19 31-27 44-27M316 110c-18 19-31 27-44 27" fill="none" stroke="#7b283f" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <div class="challenge" data-challenge>
+                <span class="challenge-tag">Reto de presencia</span>
+                <p class="challenge-question">Una persona te comparte algo importante mientras llegan notificaciones a tu pantalla. ¿Qué acción cultiva presencia?</p>
+                <div class="options">
+                  <button class="option" data-correct="false" data-feedback="Dividir la atención dificulta una escucha genuina, aunque parezca que puedes hacer ambas cosas.">Mirar las notificaciones mientras continúo escuchando.</button>
+                  <button class="option" data-correct="true" data-feedback="¡Muy bien! Retirar la distracción y volver la atención a la persona hace visible una presencia consciente.">Silenciar la pantalla, respirar y volver completamente a la conversación.</button>
+                  <button class="option" data-correct="false" data-feedback="Preparar la respuesta mientras la otra persona habla desplaza la atención del presente hacia lo que dirás después.">Pensar mi respuesta antes de que termine de hablar.</button>
+                </div>
+                <div class="feedback" aria-live="polite">Selecciona la conducta que expresa atención plena.</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="page" data-title="Continúa el recorrido" data-caption="Cierre y transición">
+          <div class="closing-grid">
+            <div class="page-copy">
+              <span class="moment">Momento 7 · Integra lo aprendido</span>
+              <h2>Tu interior también transforma el mundo</h2>
+              <p class="intro-lead">Has reconocido cinco capacidades que se fortalecen entre sí. No son metas que se alcanzan una sola vez: son prácticas que se cultivan en las decisiones cotidianas.</p>
+              <div class="summary-list" aria-label="Resumen de habilidades">
+                <span class="summary-item" style="--summary: var(--sand);">Brújula</span>
+                <span class="summary-item" style="--summary: var(--pink);">Integridad</span>
+                <span class="summary-item" style="--summary: var(--coral);">Apertura</span>
+                <span class="summary-item" style="--summary: var(--orange);">Autoconciencia</span>
+                <span class="summary-item" style="--summary: var(--wine);">Presencia</span>
+              </div>
+            </div>
+            <div class="closing-card">
+              <span class="arrow" aria-hidden="true">→</span>
+              <strong>Sigue navegando la dimensión del Ser</strong>
+              <p>Continúa con los contenidos y experiencias de la unidad para llevar estas habilidades a tu vida cotidiana.</p>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+
+    <footer class="controls">
+      <button class="nav-button" id="prevButton" type="button">← Anterior</button>
+      <div class="page-dots" id="pageDots" aria-label="Navegación rápida"></div>
+      <button class="nav-button primary" id="nextButton" type="button">Continuar →</button>
+    </footer>
+  </main>
+
+  <script>
+    (() => {
+      const pages = [...document.querySelectorAll('.page')];
+      const indexList = document.getElementById('indexList');
+      const dots = document.getElementById('pageDots');
+      const progressCopy = document.getElementById('progressCopy');
+      const progressBar = document.getElementById('progressBar');
+      const prevButton = document.getElementById('prevButton');
+      const nextButton = document.getElementById('nextButton');
+      let current = 0;
+
+      pages.forEach((page, index) => {
+        const indexButton = document.createElement('button');
+        indexButton.type = 'button';
+        indexButton.className = 'index-button';
+        indexButton.innerHTML = `<span class="index-number">${String(index + 1).padStart(2, '0')}</span><span class="index-text"><strong>${page.dataset.title}</strong><small>${page.dataset.caption}</small></span>`;
+        indexButton.addEventListener('click', () => showPage(index));
+        indexList.appendChild(indexButton);
+
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'page-dot';
+        dot.setAttribute('aria-label', `Ir al momento ${index + 1}: ${page.dataset.title}`);
+        dot.addEventListener('click', () => showPage(index));
+        dots.appendChild(dot);
+      });
+
+      function showPage(index) {
+        current = Math.max(0, Math.min(index, pages.length - 1));
+        pages.forEach((page, pageIndex) => {
+          const active = pageIndex === current;
+          page.classList.toggle('active', active);
+          page.setAttribute('aria-hidden', String(!active));
+        });
+
+        [...indexList.children].forEach((button, buttonIndex) => {
+          const active = buttonIndex === current;
+          button.classList.toggle('active', active);
+          if (active) button.setAttribute('aria-current', 'step');
+          else button.removeAttribute('aria-current');
+        });
+
+        [...dots.children].forEach((dot, dotIndex) => dot.classList.toggle('active', dotIndex === current));
+
+        const percent = ((current + 1) / pages.length) * 100;
+        progressCopy.textContent = `Momento ${current + 1} de ${pages.length}`;
+        progressBar.style.width = `${percent}%`;
+        prevButton.disabled = current === 0;
+        nextButton.textContent = current === pages.length - 1 ? 'Volver al inicio ↺' : 'Continuar →';
+      }
+
+      prevButton.addEventListener('click', () => showPage(current - 1));
+      nextButton.addEventListener('click', () => showPage(current === pages.length - 1 ? 0 : current + 1));
+
+      document.addEventListener('keydown', event => {
+        if (event.key === 'ArrowRight') showPage(current === pages.length - 1 ? current : current + 1);
+        if (event.key === 'ArrowLeft') showPage(current - 1);
+      });
+
+      document.querySelectorAll('[data-challenge]').forEach(challenge => {
+        const feedback = challenge.querySelector('.feedback');
+        const options = [...challenge.querySelectorAll('.option')];
+        options.forEach(option => {
+          option.addEventListener('click', () => {
+            options.forEach(item => item.classList.remove('selected-good', 'selected-think'));
+            const correct = option.dataset.correct === 'true';
+            option.classList.add(correct ? 'selected-good' : 'selected-think');
+            feedback.textContent = option.dataset.feedback;
+          });
+        });
+      });
+
+      showPage(0);
+    })();
+  </script>
 </body>
 </html>
